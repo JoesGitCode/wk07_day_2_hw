@@ -12,10 +12,25 @@ InstrumentInfoView.prototype.bindEvents = function(){
 }
 
 InstrumentInfoView.prototype.render = function(instrument){
+    this.container.innerHTML = '';
+
+    const allHeading = document.createElement('h2');
+    allHeading.textContent = `${instrument.name}`
+    this.container.appendChild(allHeading);
+    
+    
     const infoParagraph = document.createElement('p');
-    infoParagraph.textContent = `The ${instrument.name} ${instrument.description}${instrument.instruments}`;
-    // this.container.innerHTML = '';
+    infoParagraph.textContent = `${instrument.description}`;
     this.container.appendChild(infoParagraph);
+    
+    const infoHeading = document.createElement('h3');
+    infoHeading.textContent = `Instruments include: `
+    this.container.appendChild(infoHeading);
+
+    const allInstruments = document.createElement('p')
+    allInstruments.textContent = `${instrument.instruments}`
+    this.container.appendChild(allInstruments)
+
   };
 
 module.exports = InstrumentInfoView;
