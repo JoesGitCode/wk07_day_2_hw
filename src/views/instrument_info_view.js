@@ -33,4 +33,5 @@ InstrumentInfoView.prototype.render = function(instrument){
 
   };
 
+  
 module.exports = InstrumentInfoView;
